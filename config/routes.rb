@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 SampleApp::Application.routes.draw do
   get "users/new"
 
