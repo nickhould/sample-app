@@ -1,9 +1,14 @@
 # -*- encoding : utf-8 -*-
 SampleApp::Application.routes.draw do
   resources :users    
-  root :to => 'static_pages#home'
-  match '/signup', to: "users#new" 
+  resources :sessions, only: [:new, :create, :destroy]
+  
+  match '/signup', to: "users#new"
+  match '/signin', to: "sessions#new"
+  match '/signout', to: "sessions#destroy", via: :delete 
 
+
+  root :to => 'static_pages#home'
   match '/about',   to: "static_pages#about"
   match '/help',    to: "static_pages#help"
   match '/contact', to: "static_pages#contact"
