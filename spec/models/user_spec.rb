@@ -57,7 +57,7 @@ describe User do
 		end
 	end
 
-	describe "when email containd mixed case caracters" do
+	describe "when email containd mixed caracters" do
 		let(:mixed_case_email) { "EXAMPLE@exAmPle.com" }
 
 		it "should be converted into downcase" do 
