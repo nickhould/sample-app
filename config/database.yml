@@ -22,7 +22,5 @@ test: &test
   username: jean-nicholashould
   password:
 
-
-
 cucumber:
   <<: *test
