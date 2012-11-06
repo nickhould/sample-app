@@ -86,7 +86,7 @@ describe "UserPages" do
         fill_in "Name",         with: "Example User"
         fill_in "Email",        with: "user@example.com"
         fill_in "Password",     with: "foobar"
-        fill_in "Confirmation", with: "foobar"
+        fill_in "Confirm Password", with: "foobar"
       end
 
       it "should create a user" do
@@ -96,7 +96,6 @@ describe "UserPages" do
       describe "after saving the user" do
         before { click_button submit }
         let(:user) { User.find_by_email('user@example.com') }
-
 
         it { should have_selector('title', text: user.name) }
         it { should have_selector('div.alert.alert-success', text: 'Welcome')}
@@ -120,7 +119,6 @@ describe "UserPages" do
 
     describe "with invalid information" do
       before { click_button "Save changes" }
-
       it { should have_content('error') }
     end
 
